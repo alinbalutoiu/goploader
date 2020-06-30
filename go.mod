@@ -1,5 +1,7 @@
 module github.com/Depado/goploader
 
+go 1.14
+
 require (
 	github.com/GeertJohan/go.rice v0.0.0-20170420135705-c02ca9a983da
 	github.com/asdine/storm v2.1.2+incompatible
