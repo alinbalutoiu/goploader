@@ -37,6 +37,11 @@ servers:
 	tar czf releases/servers/server_arm.tar.gz goploader-server/
 	-rm -r goploader-server
 
+arm:
+	CGO_ENABLED=0 GOARCH=arm go build -o goploader-server/server github.com/Depado/goploader/server
+	docker build -t alinbalutoiu/goploader:arm .
+	docker push alinbalutoiu/goploader:arm
+
 release: clients servers
 	tar czf servers.tar.gz releases/servers/
 	mv servers.tar.gz releases/servers/
